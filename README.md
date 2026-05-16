@@ -16,7 +16,7 @@ That's what this project is. We built a seven-machine virtualised enterprise env
 
 ## Demo
 
-https://github.com/hemraj5003/Homelab---Enterprise-101/demo.mp4
+[https://github.com/hemraj5003/Homelab---Enterprise-101/demo.mp4](https://github.com/hemraj5003/Homelab---Enterprise-101/blob/main/demo.mp4)
 
 > Full walkthrough of the attack simulation and SOC pipeline firing in real time. Watch the Telegram alert land while Wazuh is still processing the event.
 
