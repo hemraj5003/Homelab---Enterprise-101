@@ -12,9 +12,20 @@ That's what this project is. We built a seven-machine virtualised enterprise env
 
 ---
 
+## Demo
+
+https://github.com/hemraj5003/Homelab---Enterprise-101/demo.mp4
+
+> Full walkthrough of the attack simulation and SOC pipeline firing in real time. Watch the Telegram alert land while Wazuh is still processing the event.
+
+---
+
 ## The lab environment
 
 Everything runs on a single host using VirtualBox or VMware Workstation Pro. All machines sit on a NAT network (`project-x-nat`, `10.0.0.0/24`) so they can talk to each other but are fully isolated from the internet.
+
+![Full System Architecture – Attack Simulation and SOC Pipeline](architecture.jpeg)
+*Full system architecture — the attack flows left to right through the enterprise network, while Wazuh and the n8n pipeline handle detection and response on the right side.*
 
 | Hostname | IP | Role | OS |
 |---|---|---|---|
@@ -73,6 +84,9 @@ The attack follows the Lockheed Martin Cyber Kill Chain. Each phase builds direc
 ## SOC automation pipeline
 
 When Wazuh fires a high-severity alert, a webhook kicks off an n8n workflow that does everything a tier-1 analyst would otherwise do manually — in under 15 seconds.
+
+![n8n SOC Automation Workflow](n8n_pipeline.png)
+*The actual n8n workflow — webhook ingestion, IP branching, VirusTotal enrichment, Groq LLM summarisation, and parallel output to Telegram and TheHive.*
 
 ```
 Wazuh alert → n8n webhook → IP check (public or private RFC1918?)
@@ -148,6 +162,9 @@ The attack required no custom malware and no zero-days. Just standard, freely av
 
 ---
 
+
+
+## References
 
 - [MITRE ATT&CK Framework](https://attack.mitre.org)
 - [Wazuh Documentation](https://documentation.wazuh.com)
