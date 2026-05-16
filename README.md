@@ -1,6 +1,8 @@
 # Enterprise 101 – Cybersecurity Homelab with Attack Simulation and SOC Automation
 
-A hands-on homelab that replicates how real enterprise attacks unfold — and how an automated SOC pipeline responds to them. Built as a final year B.Tech project in CSE (Cyber Security) at Shri Ramdeobaba College of Engineering & Management, Nagpur.
+A fully virtualized enterprise cybersecurity homelab designed to simulate real-world attack chains and automated SOC operations using open-source security tools.
+
+This project demonstrates both offensive and defensive security workflows inside a controlled enterprise environment — from reconnaissance and phishing to SIEM detection, alert enrichment, AI-assisted incident analysis, and automated case management.
 
 ---
 
