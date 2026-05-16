@@ -85,7 +85,7 @@ The attack follows the Lockheed Martin Cyber Kill Chain. Each phase builds direc
 
 When Wazuh fires a high-severity alert, a webhook kicks off an n8n workflow that does everything a tier-1 analyst would otherwise do manually — in under 15 seconds.
 
-![n8n SOC Automation Workflow](n8n_pipeline.png)
+![n8n SOC Automation Workflow]
 *The actual n8n workflow — webhook ingestion, IP branching, VirusTotal enrichment, Groq LLM summarisation, and parallel output to Telegram and TheHive.*
 
 ```
